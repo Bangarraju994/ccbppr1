@@ -1,25 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
+import UserProfile from './Components/UserProfiles'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const userDetails = [
+{
+  uniqueNo: 1,
+  name: 'Robert',
+  age: 28
+}, 
+{
+  uniqueNo: 2,
+  name: 'Rahim',
+  age: 25
+},
+{
+  uniqueNo: 3,
+  name: 'Ram',
+  age: 26
+},
+{
+  uniqueNo: 4,
+  name: 'Rizwan',
+  age: 24
+
+},
+{
+  uniqueNo: 5,
+  name: 'Rozer',
+  age: 29
 }
+];
+
+const App = () => (
+  <div>
+    <h1> Users List </h1>
+    <ul>
+      {
+        userDetails.map((eachItem) => (<UserProfile userDetails={eachItem} />))
+      }
+    </ul>
+  </div>
+)
+  
+
 
 export default App;
